@@ -1,5 +1,5 @@
 // Modules
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 // Components
 import Cart from "./Cart";
@@ -16,12 +16,19 @@ const NavBar = ({ cart, deleteCartItem }) => {
   const [isMobileNavigationDropdownOpen, setIsMobileNavigationDropdownOpen] =
     useState(false);
 
-  // Close the cart when the document body is clicked
-  document.body.addEventListener("click", () => {
-    if (isCartOpen) {
-      setIsCartOpen(false);
-    }
-  });
+  useEffect(() => {
+    const closeCart = () => {
+      if (isCartOpen) {
+        setIsCartOpen(false);
+      }
+    };
+    // Close the cart when the document body is clicked
+    document.body.addEventListener("click", closeCart);
+
+    return () => {
+      document.body.removeEventListener("click", closeCart);
+    };
+  }, [isCartOpen]);
 
   return (
     <nav className="navigation">

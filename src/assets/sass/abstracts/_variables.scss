@@ -44,7 +44,7 @@ $base-fonts: (
     ),
   "line-height": 1,
   "font-weight": 400,
-  "color": getColor("dark"),
+  "color": map-get($map: $colors, $key: dark),
 );
 
 $heading-font-sizes: (

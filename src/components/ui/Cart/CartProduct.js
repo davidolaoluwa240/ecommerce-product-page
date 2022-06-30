@@ -1,3 +1,4 @@
+// Components
 import CartProductItem from "./CartProductItem";
 
 const CartProduct = ({ cart, deleteCartItem }) => {

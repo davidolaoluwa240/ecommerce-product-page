@@ -1,0 +1,40 @@
+.product-detail-gallery-item {
+  width: 88px;
+  border-radius: 10px;
+  position: relative;
+  cursor: pointer;
+
+  &::after,
+  &--active::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: inherit;
+    transition: all 0.2s linear;
+    border: 3px solid transparent;
+  }
+
+  &:hover::after,
+  &--active::after {
+    background: rgba(255, 255, 255, 0.6);
+  }
+
+  &--active::after {
+    border-color: #ff7d1a;
+  }
+
+  &:not(:last-child) {
+    margin-right: 2.9rem;
+  }
+
+  &__photo {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+  }
+}

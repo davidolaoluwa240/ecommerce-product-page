@@ -1,0 +1,60 @@
+.product-carousel-photo {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom bottom;
+  border-radius: 12px;
+  position: relative;
+
+  &__prev-box,
+  &__next-box {
+    background-color: getColor("light");
+    width: 50px;
+    height: 50px;
+    border-radius: 9999px;
+    position: absolute;
+    top: 50%;
+    left: -23px;
+    transform: translateY(-50%);
+    cursor: pointer;
+
+    @include flex-box(center, center);
+
+    @include respond(phone) {
+      left: 23px;
+    }
+  }
+
+  &__prev-icon,
+  &__next-icon {
+    width: 12px;
+    height: 18px;
+    display: inline-block;
+    background: getColor("grey-dark-100");
+    mask-size: cover;
+    transition: background 0.2s linear;
+  }
+
+  &__prev-icon {
+    mask: url("../../images/icon-previous.svg");
+  }
+
+  &__next-icon {
+    mask: url("../../images/icon-next.svg");
+  }
+
+  &__next-box {
+    left: initial;
+    right: -23px;
+
+    @include respond(phone) {
+      right: 23px;
+    }
+  }
+
+  &__prev-box:hover &__prev-icon,
+  &__next-box:hover &__next-icon {
+    background-color: getColor("primary-color");
+  }
+}

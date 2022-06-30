@@ -1,0 +1,27 @@
+.product-photo-gallery-modal {
+  background: rgba(0, 0, 0, 0.53);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  @include flex-box(center, center);
+
+  @include respond(tab-land) {
+    display: none;
+  }
+
+  &__container {
+    max-width: 600px;
+    min-width: 600px;
+  }
+
+  &__top {
+    height: 80vh;
+    margin-bottom: 2.5rem;
+  }
+
+  &__bottom {
+    @include flex-box(center);
+  }
+}

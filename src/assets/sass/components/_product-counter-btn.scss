@@ -1,0 +1,54 @@
+.product-counter-btn {
+  flex-grow: 1;
+  background-color: getColor("grey-light-100");
+  border-radius: 10px;
+  margin-right: 1.9rem;
+
+  @include respond(phone) {
+    @include flex-box(space-between, $align-items: center);
+  }
+
+  &__minus,
+  &__plus {
+    padding: 2.4rem 0;
+    padding-right: 2.8rem;
+    cursor: pointer;
+    vertical-align: middle;
+    display: inline-block;
+    border-radius: inherit;
+
+    @include respond(phone) {
+      padding-right: 0;
+    }
+  }
+
+  &__display {
+    width: 4rem;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: 700;
+    font-size: 1.8rem;
+  }
+
+  &__plus {
+    padding-right: 1.6rem;
+    padding-left: 2.9rem;
+
+    @include respond(phone) {
+      padding-right: 4rem;
+    }
+  }
+
+  &__minus {
+    padding-left: 1.6rem;
+
+    @include respond(phone) {
+      padding-left: 4rem;
+    }
+  }
+
+  &__minus--disabled {
+    cursor: not-allowed;
+  }
+}

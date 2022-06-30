@@ -1,24 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+// Modules
+import { useState, useEffect } from "react";
+import { productData } from "./data/data";
+
+// Components
+import NavBar from "./components/shared/NavBar";
+import ProductDetails from "./components/ui/product/ProductDetails";
 
 function App() {
+  const [product, setProduct] = useState({});
+  const [cart, setCart] = useState({});
+
+  useEffect(() => {
+    setProduct(productData);
+  }, []);
+
+  const addToCart = function (quantityNumber) {
+    if (quantityNumber) {
+      let newCart;
+      // When cart has some keys. Just increment the quantity
+      if (Object.keys(cart).length) {
+        newCart = { ...cart, qty: cart.qty + quantityNumber };
+      } else {
+        // When the cart object is empty then spread the product and increment the counter
+        newCart = { ...product, qty: quantityNumber };
+      }
+      setCart(newCart);
+    }
+  };
+
+  const deleteCartItem = function () {
+    // Set cart object to be empty
+    setCart({});
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <>
+      <header className="header">
+        <NavBar cart={cart} deleteCartItem={deleteCartItem} />
       </header>
-    </div>
+
+      <main className="main">
+        <ProductDetails product={product} addToCart={addToCart} />
+      </main>
+    </>
   );
 }
 

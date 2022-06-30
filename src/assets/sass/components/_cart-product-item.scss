@@ -1,0 +1,35 @@
+.cart-product-item {
+  display: flex;
+  align-items: center;
+
+  &__photo {
+    width: 50px;
+    border-radius: 5px;
+    margin-right: 1.5rem;
+  }
+
+  &__name {
+    color: getColor("grey-light-300");
+    margin-bottom: 0.3rem;
+  }
+
+  &__price {
+    color: getColor("grey-light-300");
+    vertical-align: middle;
+  }
+
+  &__total {
+    color: getColor("grey-dark-100");
+    font-weight: 700;
+    vertical-align: middle;
+    margin-left: 0.7rem;
+  }
+
+  &__action {
+    margin-left: 1.4rem;
+  }
+
+  &__delete-icon {
+    cursor: pointer;
+  }
+}

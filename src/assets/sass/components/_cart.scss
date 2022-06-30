@@ -1,0 +1,56 @@
+.cart {
+  width: 360px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  position: absolute;
+  top: 45px;
+  left: -200px;
+  z-index: 2;
+  background: getColor("light");
+  border-radius: 5px;
+
+  @include respond(tab-land) {
+    right: 0;
+    left: initial;
+    top: 100px;
+  }
+
+  @include respond(phone) {
+    left: 50%;
+    transform: translateX(-50%);
+    top: 80px;
+    right: initial;
+  }
+
+  @media screen and (max-width: 340px) {
+    width: 100%;
+  }
+
+  &__header {
+    padding: 2.5rem;
+    border-bottom: 1px solid getColor("grey-light-200");
+    display: flex;
+    align-items: center;
+  }
+
+  &__heading {
+    font-weight: 700;
+  }
+
+  &__content {
+    padding: 2.5rem;
+  }
+
+  &__empty {
+    height: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    color: rgb(104, 112, 125);
+  }
+
+  &__products-btn {
+    margin-top: 2.5rem;
+    margin-bottom: 5px;
+  }
+}

@@ -1,0 +1,119 @@
+.navigation {
+  &__container {
+    max-width: 1130px;
+    margin: 0 auto;
+    @include flex-box($align-items: center);
+    height: 113px;
+    border-bottom: 1px solid rgb(229, 231, 235);
+
+    @include respond(tab-land) {
+      width: 90%;
+      position: relative;
+    }
+
+    @include respond(tab-port) {
+      width: 95%;
+    }
+
+    @include respond(phone) {
+      height: 80px;
+      width: 90%;
+      border-bottom: none;
+    }
+  }
+
+  &__mobile-menu {
+    display: none;
+
+    @include respond(phone) {
+      display: inline-block;
+      margin-right: 1.7rem;
+      cursor: pointer;
+    }
+  }
+
+  &__group {
+    list-style: none;
+    @include flex-box($align-items: center);
+    margin-left: 5.6rem;
+  }
+
+  &__group:last-of-type {
+    margin-left: auto;
+  }
+
+  &__group:first-of-type {
+    align-self: stretch;
+
+    @include respond(phone) {
+      display: none;
+    }
+  }
+
+  &__group:first-of-type &__list {
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    border-bottom: 5px solid transparent;
+  }
+
+  &__group:first-of-type &__list:hover {
+    border-bottom-color: getColor("primary-color");
+  }
+
+  &__list {
+    cursor: pointer;
+    transition: all 0.3s linear;
+  }
+
+  &__list:not(:last-child) {
+    margin-right: 3.3rem;
+  }
+
+  &__name {
+    text-decoration: none;
+    color: getColor("grey-light-300");
+  }
+
+  &__icon {
+    display: block;
+  }
+
+  &__icon--user {
+    width: 50px;
+    height: 50px;
+    border-radius: 9999px;
+    border: 3px solid transparent;
+    transition: all 0.3s linear;
+  }
+
+  &__icon--user:hover {
+    border-color: getColor("primary-color");
+  }
+
+  &__list--cart {
+    position: relative;
+
+    @include respond(tab-land) {
+      position: static;
+    }
+  }
+
+  &__list--cart > &__name {
+    position: relative;
+  }
+
+  &__name-cart-notification {
+    position: absolute;
+    display: inline-block;
+    background: getColor("primary-color");
+    color: getColor("light");
+    top: -10px;
+    right: -34px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    border-radius: 12px;
+    padding: 0.2rem 1rem;
+    text-align: center;
+  }
+}

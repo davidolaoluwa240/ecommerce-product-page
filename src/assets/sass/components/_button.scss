@@ -1,0 +1,24 @@
+.btn {
+  &,
+  &:link,
+  &:visited {
+    background: getColor("primary-color");
+    height: 58px;
+    width: 100%;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    align-items: center;
+    color: getColor("light");
+    transition: all 0.2s linear;
+    border: none;
+    cursor: pointer;
+  }
+
+  &:hover {
+    background: rgba(255, 125, 26, 0.8);
+  }
+}

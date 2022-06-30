@@ -1,0 +1,39 @@
+.navigation-mobile {
+  background-color: rgba(getColor("dark"), 0.5);
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  cursor: pointer;
+
+  &__group {
+    background-color: getColor("light");
+    width: 70%;
+    height: 100%;
+    padding: 2rem 3rem;
+    cursor: default;
+  }
+
+  &__action {
+    margin-bottom: 5rem;
+  }
+
+  &__lists {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  &__list:not(:last-child) {
+    margin-bottom: 3.4rem;
+  }
+
+  &__name {
+    font-size: 2rem;
+    font-weight: 700;
+    color: getColor("grey-dark-100");
+    cursor: pointer;
+  }
+}

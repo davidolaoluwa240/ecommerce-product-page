@@ -1,5 +1,5 @@
 // Modules
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { productData } from "./data/data";
 
 // Components
@@ -7,12 +7,8 @@ import NavBar from "./components/shared/NavBar";
 import ProductDetails from "./components/ui/product/ProductDetails";
 
 function App() {
-  const [product, setProduct] = useState({});
+  const [product] = useState(productData);
   const [cart, setCart] = useState({});
-
-  useEffect(() => {
-    setProduct(productData);
-  }, []);
 
   const addToCart = function (quantityNumber) {
     if (quantityNumber) {
